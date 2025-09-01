@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="dev.cozy.springfxweather.WeatherController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Location -->
+    <Label fx:id="locationLabel" text="📍 Location: --" style="-fx-font-size: 16px;"/>
+
+    <!-- Weather Info -->
+    <VBox spacing="10" alignment="CENTER">
+        <Label fx:id="conditionLabel" text="☀️ Condition: --" style="-fx-font-size: 18px;"/>
+        <Label fx:id="temperatureLabel" text="🌡️ Temperature: --" style="-fx-font-size: 18px;"/>
+        <Label fx:id="windLabel" text="💨 Wind: --" style="-fx-font-size: 16px;"/>
+        <Label fx:id="humidityLabel" text="💧 Humidity: --" style="-fx-font-size: 16px;"/>
+    </VBox>
+
+    <!-- Actions -->
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="Refresh" onAction="#onRefreshClick"/>
+        <Button text="Settings" onAction="#onSettingsClick"/>
+        <Button text="Exit" onAction="#onExitClick"/>
+    </HBox>
+</VBox>
