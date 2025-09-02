@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="dev.cozy.springfxweather.SettingsController" spacing="15" alignment="CENTER" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #360ae7 11.2%, #19fdf9 100.2%);">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="dev.cozy.springfxweather.SettingsController" spacing="15" alignment="CENTER" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #122159 11.2%, #95609F 100.2%);">
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
@@ -16,7 +16,7 @@
 
     <HBox spacing="10" alignment="CENTER">
         <Label text="Location:" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
-        <TextField fx:id="locationField" promptText="Enter city or country" style="-fx-background-color: rgba(255,255,255,0.9); -fx-background-radius: 10; -fx-border-radius: 10;"/>
+        <TextField fx:id="locationField" promptText="Enter city or country" style="-fx-background-color: rgba(255,255,255,0.9);"/>
     </HBox>
 
     <HBox spacing="10" alignment="CENTER">

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #360ae7 11.2%, #19fdf9 100.2%);"
+<VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #122159 11.2%, #95609F 100.2%);"
     xmlns:fx="http://javafx.com/fxml" fx:controller="dev.cozy.springfxweather.WeatherController">
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
@@ -22,14 +22,14 @@
 
     <!-- Weather Info -->
     <VBox spacing="10" alignment="CENTER">
-        <Label fx:id="conditionLabel" text="Condition: --" style="-fx-font-size: 18px; -fx-text-fill: white; -fx-font-weight: bold;">
+        <Label fx:id="conditionLabel" text="Condition: --" style="-fx-font-size: 16px; -fx-text-fill: white; -fx-font-weight: bold;">
             <graphic>
-                <FontIcon iconLiteral="fth-cloud" iconSize="18" iconColor="white"/>
+                <FontIcon iconLiteral="fth-cloud" iconSize="16" iconColor="white"/>
             </graphic>
         </Label>
-        <Label fx:id="temperatureLabel" text="Temperature: --" style="-fx-font-size: 18px; -fx-text-fill: white; -fx-font-weight: bold;">
+        <Label fx:id="temperatureLabel" text="Temperature: --" style="-fx-font-size: 16px; -fx-text-fill: white; -fx-font-weight: bold;">
             <graphic>
-                <FontIcon iconLiteral="fth-thermometer" iconSize="18" iconColor="white"/>
+                <FontIcon iconLiteral="fth-thermometer" iconSize="16" iconColor="white"/>
             </graphic>
         </Label>
         <Label fx:id="windLabel" text="Wind: --" style="-fx-font-size: 16px; -fx-text-fill: white; -fx-font-weight: bold;">
