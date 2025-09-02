@@ -15,12 +15,16 @@ import java.util.Optional;
 @Component
 public class WeatherController {
 
-    @FXML private Label locationLabel;
-    @FXML private Label conditionLabel;
-    @FXML private Label temperatureLabel;
-    @FXML private Label windLabel;
-    @FXML private Label humidityLabel;
-
+    @FXML
+    private Label locationLabel;
+    @FXML
+    private Label conditionLabel;
+    @FXML
+    private Label temperatureLabel;
+    @FXML
+    private Label windLabel;
+    @FXML
+    private Label humidityLabel;
 
     private final WeatherService weatherService;
 
@@ -52,8 +56,8 @@ public class WeatherController {
     @FXML
     private void onExitClick() {
         System.out.println("Exit button clicked");
-        Platform.exit();   // Cleanly shuts down the JavaFX application
-        System.exit(0);    // Ensures JVM terminates
+        Platform.exit(); // Cleanly shuts down the JavaFX application
+        System.exit(0); // Ensures JVM terminates
     }
 
     // Open Settings dialog
@@ -69,6 +73,7 @@ public class WeatherController {
         dialogStage.initOwner(locationLabel.getScene().getWindow());
 
         Scene scene = new Scene(loader.load());
+        dialogStage.setOpacity(0.9); // Set settings window opacity for system blending
         dialogStage.setScene(scene);
 
         // Pass reference to controller
@@ -82,11 +87,11 @@ public class WeatherController {
     // Update weather info from API or settings
     public void updateWeather(WeatherDataResponse data) {
         this.currentLocation = data.location();
-        locationLabel.setText("📍 Location: " + data.location());
-        conditionLabel.setText("☀️ Condition: " + data.weatherDescription());
-        temperatureLabel.setText("🌡️ Temperature: " + data.tempCelsius() + "°C / " + data.tempFahrenheit() + "°F");
-        windLabel.setText("💨 Wind: " + data.windSpeed());
-        humidityLabel.setText("💧 Humidity: " + data.humidity() + "%");
+        locationLabel.setText("Location: " + data.location());
+        conditionLabel.setText("Condition: " + data.weatherDescription());
+        temperatureLabel.setText("Temperature: " + data.tempCelsius() + "°C / " + data.tempFahrenheit() + "°F");
+        windLabel.setText("Wind: " + data.windSpeed());
+        humidityLabel.setText("Humidity: " + data.humidity());
     }
 
     // Helper for SettingsController
@@ -97,8 +102,7 @@ public class WeatherController {
     private void fetchAndUpdateWeather(String location) {
         weatherService.getWeather(location)
                 .doOnError(err -> System.err.println("Failed to fetch weather: " + err.getMessage()))
-                .subscribe(data ->
-                        Platform.runLater(() -> updateWeather(data)) // ensure UI updates on FX thread
+                .subscribe(data -> Platform.runLater(() -> updateWeather(data)) // ensure UI updates on FX thread
                 );
     }
 }
